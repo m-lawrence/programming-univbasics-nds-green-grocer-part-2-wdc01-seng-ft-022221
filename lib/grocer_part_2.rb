@@ -46,6 +46,9 @@ def checkout(cart, coupons)
   while index < discounted_checkout_cart.length 
   total = discounted_checkout_cart[index][:price] * discounted_checkout_cart[index][:count]
   grand_total = grand_total + total
+    if grand_total >= 100 
+      grand_total = grand_total - (grand_total * 0.10).round(2)
+    end
   index += 1
 end
 grand_total
